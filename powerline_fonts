@@ -7,6 +7,9 @@ https://github.com/Lokaltog/powerline-fonts
 ```
 
 * Then drag-drop the otf-files in to Font Book, but still not visible in terminal (iTerm2). They are placed in ~/Library/Fonts
+
+(Not sure fontconfig is needed, perhaps setting correct in MacVim preferences is enough!)
+
 * install fontconfig with homebrew
 * make a link to ~/Library/Fonts: ~/.fonts
 * do a font cache refresh (?)
@@ -14,3 +17,5 @@ https://github.com/Lokaltog/powerline-fonts
 ```
 fc-cache -vf ~/.fonts
 ```
+
+* to the the fonts OK into MacVim, Preferences->Profile->Text && select Sauce code for both regular and esp. non-ascii text
