@@ -21,6 +21,8 @@ Similarly to linux above, loosely following (https://github.com/b4winckler/macvi
   ./configure --with-features=huge --enable-pythoninterp --with-python-config-dir=/Users/cjb/anaconda/lib/python2.7/config --prefix=/opt/local
   make
   
+EDIT (15 Sep 2014): the make seems to work now (on Mavericks), so below not needed!
+
 However, the make fails since it tries to link to -framework Python. Copy-paste the failing command, and replace the last two words with:
   ... -L${PYTHON_CONFDIR} -lpython2.7
   make
