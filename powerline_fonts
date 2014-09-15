@@ -1,0 +1,16 @@
+# Mac
+
+* First I cloned the lokaltog-versions of powerline patched fonts here
+
+```
+https://github.com/Lokaltog/powerline-fonts
+```
+
+* Then drag-drop the otf-files in to Font Book, but still not visible in terminal (iTerm2). They are placed in ~/Library/Fonts
+* install fontconfig with homebrew
+* make a link to ~/Library/Fonts: ~/.fonts
+* do a font cache refresh (?)
+
+```
+fc-cache -vf ~/.fonts
+```
