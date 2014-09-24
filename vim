@@ -18,13 +18,16 @@ Similarly to linux above, loosely following (https://github.com/b4winckler/macvi
 
 ```
   git clone git://github.com/b4winckler/macvim.git
+  make distclean # VERY IMPORTANT!
   ./configure --with-features=huge --enable-pythoninterp --with-python-config-dir=/Users/cjb/anaconda/lib/python2.7/config --prefix=/opt/local
-  make
   
-EDIT (15 Sep 2014): the make seems to work now (on Mavericks), so below not needed!
+EDIT (24 Sep 2014): The above seems to work on Mavericks, but a -framework Python sneaks into the gcc link command if you run make!
+FIX: find the line PYTHON_LIBS in src/auto/config.mk (after running the configure script!), and replace
 
-However, the make fails since it tries to link to -framework Python. Copy-paste the failing command, and replace the last two words with:
-  ... -L${PYTHON_CONFDIR} -lpython2.7
+  PYTHON_LIBS = -framework Python
+  to
+  PYTHON_LIBS = -L/Users/cjb/anaconda/lib/python2.7/config -lpython2.7
+
   make
   open MacVim/build/Release
 ```
